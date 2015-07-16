@@ -1,0 +1,9 @@
+{
+  "name": "screen-loader",
+  "version": "1.0.0",
+  "main": "screen-loader.js",
+  "dependencies": {
+    "underscore": "^1.8.3",
+    "underscore.string": "^3.1.1"
+  }
+}
