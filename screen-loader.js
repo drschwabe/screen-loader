@@ -19,7 +19,7 @@ module.exports = function(screens) {
     //Convert from the slug back to a camelized module name:
     var moduleName = _s.camelize(currentScreenSlug)
     //Now we can call the module's init function: 
-    screens[moduleName].init()
+    if(screens[moduleName].init) return screens[moduleName].init()
   }
 }
 

@@ -1,7 +1,26 @@
 {
   "name": "screen-loader",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "main": "screen-loader.js",
+  "description": "Modularize every 'screen' of your app.",    
+  "license": "MIT",    
+  "author": {
+    "name": "Derrick Schwabe",
+    "email": "admin@nerdbusiness.com"
+  },
+  "homepage": "https://github.com/drschwabe/screen-loader",        
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/drschwabe/screen-loader"
+  },
+  "keywords": [
+    "screen", 
+    "loader",
+    "browserify",
+    "frontend", 
+    "url parsing", 
+    "modularize"
+  ],    
   "dependencies": {
     "underscore": "^1.8.3",
     "underscore.string": "^3.1.1"
