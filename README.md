@@ -1,6 +1,6 @@
 ##  Screen Loader
 
-Modularize every "screen" of your app by using Screen Loader.  Each screen gets a unique URL slug based on the module
+Modularize every "screen" of your app by using Screen Loader.  Each screen gets a unique URL slug based on the module name.
 
 Used as a client-side module via Browserify. 
 
@@ -12,9 +12,9 @@ npm install screen-loader
 ### Load some screens
 
 ```
-\\app.js 
+//app.js 
 
-\\Create an object containing your required screens. 
+//Create an object containing your required screens. 
 var screens = {}
 screens.dashboardLogin = require('../screens/dashboard-login')
 screens.dashboardProfile = require('../screens/dashboard-profile')
