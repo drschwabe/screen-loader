@@ -14,12 +14,31 @@ module.exports = function(screens) {
   //Trim the current path down to the core URL slug: 
   var currentScreenSlug = window.location.pathname.substring(1).replace('.html', '').replace('/', '-')
 
-  //Check to see if there is a corresponding module: 
-  if( _.contains(screenIndex, currentScreenSlug)) { //< There is a module.
+  console.log(currentScreenSlug)
+
+  //## Basic wildcard support ###
+  
+  //See if the URL slug has an extra slash and we use anything to the right of said slash as the wildcard value.  
+  var base = _s.strLeft(currentScreenSlug, '/')
+  var wildcard = _s.strRight(currentScreenSlug, '/')
+  //If it does, do a loop over the screens to run corresponding init function
+  //(with wildcard included): 
+  if(wildcard) initCorrespondingScreen(screens, screenIndex, base, wildcard) 
+
+  //Now run the init function for other modules: 
+  initCorrespondingScreen(screens, screenIndex, currentScreenSlug)
+}
+
+function initCorrespondingScreen(screens, screenIndex, currentScreenSlug, wildcard) {
+    if( _.contains(screenIndex, currentScreenSlug)) { //< There is a module.
     //Convert from the slug back to a camelized module name:
     var moduleName = _s.camelize(currentScreenSlug)
-    //Now we can call the module's init function: 
-    if(screens[moduleName].init) return screens[moduleName].init()
+    //Now we can call the module's init function...
+    if(screens[moduleName].init && !screens[moduleName].initialized) {
+      screens[moduleName].init(wildcard)
+      //Prevent screens from being initialized twice: 
+      screens[moduleName].initialized = true
+    } 
   }
 }
 
