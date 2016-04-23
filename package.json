@@ -1,6 +1,6 @@
 {
   "name": "screen-loader",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "screen-loader.js",
   "description": "Modularize every 'screen' of your app.",    
   "license": "MIT",    

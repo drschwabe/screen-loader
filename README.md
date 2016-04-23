@@ -1,5 +1,8 @@
 ##  Screen Loader
 
+DEPRECATED: it's better to simply load your screens via a URL route as opposed to this object model; and use application-wide events to trigger common functions like 'init'.  
+
+----
 Modularize every "screen" of your app by using Screen Loader.  Each screen gets a unique URL slug based on the module name.
 
 Used as a client-side module via Browserify. 
